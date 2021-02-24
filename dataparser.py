@@ -11,11 +11,20 @@ def nl(itr):
     return [int(v) for v in next(itr).split()]
 
 
-def parse(inp):
+def parse(inp):  # get the input file as string
     itr = (line for line in inp.split('\n'))
     ns = argparse.Namespace()
     # TODO: fill ns
-
+    ns.M, ns.T2, ns.T3, ns.T4 = nl(itr)
+    pizzas = []
+    for i in range(ns.M):
+        L = next(itr).split()
+        ingred = L[1:]
+        pizza = {'id': i,
+                 'ingredients': ingred
+                 }
+        pizzas.append(pizza)
+    ns.pizzas = pizzas
     return ns
 
 class FlexibleEncoder(json.JSONEncoder):
