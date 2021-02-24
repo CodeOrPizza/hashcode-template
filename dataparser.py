@@ -56,3 +56,5 @@ if __name__ == '__main__':
         data = parse2json(inp.read_text())
         with inp.with_suffix('.json').open('w') as f:
             f.write(data)
+
+
