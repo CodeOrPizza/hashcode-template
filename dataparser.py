@@ -28,7 +28,6 @@ def parse(inp):
     ns.pizzas = pizzas
     return ns
 
-
 class FlexibleEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, argparse.Namespace):
